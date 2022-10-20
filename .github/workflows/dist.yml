@@ -16,12 +16,7 @@ jobs:
     - name: build dist
       run: |
         ncc build index.js --license licenses.txt
-
-  commit_dist:
-    needs: [build_dist]
-    runs-on: ubuntu-latest
-    steps:
-    - name: commit action
+    - name: commit dist
       uses: devops-infra/action-commit-push@master
       with:
         github_token: "${{ secrets.GITHUB_TOKEN }}"
