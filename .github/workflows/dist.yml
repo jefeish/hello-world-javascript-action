@@ -23,7 +23,7 @@ jobs:
         add_timestamp: true
         commit_prefix: "[ACTION]"
         commit_message: "Automatic commit"
-        force: true
+        force: false
         target_branch: dist/version
     - name: debug
       env:
