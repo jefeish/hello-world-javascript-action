@@ -1,0 +1,29 @@
+name: Close Pull Request
+
+# only trigger on pull request closed events
+on:
+  pull_request:
+    types: [ closed ]
+
+jobs:
+  build_dist:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+    - name: build dist
+      run: |
+        ncc build index.js --license licenses.txt
+
+  commit_dist:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+    - name: commit action
+      uses: devops-infra/action-commit-push@master
+      with:
+        github_token: "${{ secrets.GITHUB_TOKEN }}"
+        add_timestamp: true
+        commit_prefix: "[AUTO]"
+        commit_message: "Automatic commit"
+        force: false
+        target_branch: update/version
