@@ -24,4 +24,11 @@ jobs:
         commit_prefix: "[AUTO]"
         commit_message: "Automatic commit"
         force: false
-        target_branch: update/version
+        target_branch: update/dist
+
+    - name: pull-request-action
+      uses: vsoch/pull-request-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH_PREFIX: "update/dist"
+        PULL_REQUEST_BRANCH: "main"
