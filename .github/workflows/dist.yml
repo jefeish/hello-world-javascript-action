@@ -2,9 +2,7 @@ name: Close Pull Request
 
 # only trigger on pull request closed events
 on:
-  pull_request:
-    branches: [ main ]
-    types: [ closed ]
+  workflow_dispatch:
 
 jobs:
   build_dist:
