@@ -33,4 +33,3 @@ jobs:
         BRANCH_PREFIX: "dist/version"
         PULL_REQUEST_BRANCH: "main"
         PULL_REQUEST_FROM_BRANCH: "dist/version"
-				
