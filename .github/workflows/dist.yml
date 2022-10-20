@@ -19,6 +19,7 @@ jobs:
         ncc build index.js --license licenses.txt
 
   commit_dist:
+    needs: [build_dist]
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
