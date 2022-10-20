@@ -28,10 +28,10 @@ jobs:
     - name: debug
       env:
         BRANCH_NAME: ${{ steps.commit.outputs.branch_name }}
-      run: echo "$JOB_CONTEXT"
+      run: echo "BRANCH_NAME"
     - name: pull-request-action
       uses: vsoch/pull-request-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH_PREFIX: "dist/version"
+        BRANCH_NAME: ${{ steps.commit.outputs.branch_name }}
         PULL_REQUEST_BRANCH: "main"
