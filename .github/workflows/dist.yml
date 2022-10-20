@@ -29,7 +29,7 @@ jobs:
     - name: debug
       env:
         JOB_CONTEXT: ${{ steps.commit.outputs.branch_name }}
-        run: echo "$JOB_CONTEXT"
+      run: echo "$JOB_CONTEXT"
     - name: pull-request-action
       uses: vsoch/pull-request-action@master
       env:
