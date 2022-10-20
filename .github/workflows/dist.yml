@@ -33,5 +33,5 @@ jobs:
       uses: vsoch/pull-request-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH_NAME: "main"
-        PULL_REQUEST_BRANCH: ${{ steps.commit.outputs.branch_name }}
+        BRANCH_PREFIX: ${{ steps.commit.outputs.branch_name }}
+        PULL_REQUEST_BRANCH: "main"
