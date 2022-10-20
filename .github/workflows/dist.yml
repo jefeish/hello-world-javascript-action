@@ -11,6 +11,9 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
+    - name: install ncc
+      run: |
+        npm i -g @vercel/ncc
     - name: build dist
       run: |
         ncc build index.js --license licenses.txt
