@@ -6,7 +6,6 @@ on:
 
 jobs:
   build_dist:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
     - name: install ncc
@@ -20,7 +19,6 @@ jobs:
 
   commit_dist:
     needs: [build_dist]
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
     - name: commit action
