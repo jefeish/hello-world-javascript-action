@@ -28,7 +28,7 @@ jobs:
         target_branch: dist/version
     - name: debug
       env:
-        JOB_CONTEXT: ${{ steps.commit.outputs.branch_name }}
+        BRANCH_NAME: ${{ steps.commit.outputs.branch_name }}
       run: echo "$JOB_CONTEXT"
     - name: pull-request-action
       uses: vsoch/pull-request-action@master
