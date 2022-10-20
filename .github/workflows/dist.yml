@@ -14,8 +14,9 @@ jobs:
     - name: install ncc
       run: |
         npm i -g @vercel/ncc
-    - name: build dist
+    - name: checkout code
       uses: actions/checkout@v2
+    - name: build dist
       run: |
         ncc build index.js --license licenses.txt
 
