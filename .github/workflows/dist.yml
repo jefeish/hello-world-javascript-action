@@ -1,6 +1,5 @@
 name: Build Distribution
 
-# only trigger on pull request closed events
 on:
   workflow_dispatch:
 
