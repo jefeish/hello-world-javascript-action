@@ -15,6 +15,7 @@ jobs:
       run: |
         npm i -g @vercel/ncc
     - name: build dist
+      uses: actions/checkout@v2
       run: |
         ncc build index.js --license licenses.txt
 
