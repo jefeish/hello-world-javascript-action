@@ -25,4 +25,4 @@ with:
 ## How to Create a Distribution
 
 This Action (template) has the ability to create a distribution. 
-To do this run the `Build Distribution` work-dispatch, for `.github/workflows/dist.yml`
+To do this run the `Build Distribution` **workflow_dispatch**, for `.github/workflows/dist.yml`
