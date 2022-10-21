@@ -21,3 +21,8 @@ uses: actions/hello-world-javascript-action@v1.1
 with:
   who-to-greet: 'Mona the Octocat'
 ```
+
+## How to Create a Distribution
+
+This Action (template) has the ability to create a distribution. 
+To do this run the `Build Distribution` work-dispatch, for `.github/workflows/dist.yml`
