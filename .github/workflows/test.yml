@@ -4,7 +4,10 @@ on:
   workflow_dispatch:
   
 jobs:
-  test:  
-    uses: ./
-    with:
-      who-to-greet: 'Mona the Octocat'
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ./
+      with:
+        who-to-greet: 'Mona the Octocat'
