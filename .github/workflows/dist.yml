@@ -7,14 +7,22 @@ jobs:
   build_dist:
     runs-on: ubuntu-latest
     steps:
+
+    # install dependencies to build the distribution
     - name: install ncc
       run: |
         npm i -g @vercel/ncc
+
+    # checkout the repo
     - name: checkout code
       uses: actions/checkout@v2
+
+    # build the distribution code (dist/index.js)
     - name: build dist
       run: |
         ncc build index.js --license licenses.txt
+
+    # commit the distribution code to a new Branch
     - name: commit dist
       uses: devops-infra/action-commit-push@master
       id: commit
@@ -25,10 +33,8 @@ jobs:
         commit_message: "Automatic commit"
         force: false
         target_branch: dist/version
-    - name: debug
-      env:
-        BRANCH_NAME: ${{ steps.commit.outputs.branch_name }}
-      run: echo "BRANCH_NAME"
+
+    # create a Pull Request from the new Branch
     - name: pull-request-action
       uses: vsoch/pull-request-action@master
       env:
